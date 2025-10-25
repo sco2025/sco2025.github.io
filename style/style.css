@@ -1,237 +1,143 @@
-@font-face {
-    font-family: lato;
-    src: url(font/Lato-Regular.ttf);
-}
-@font-face {
-    font-family: jetBrains;
-    src: url(font/JetBrainsMono-Bold.ttf);
-}
-* {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-}
-body {
-    font-family: lato;
-}
+:root{
+    --bg:#0E1117;
+    --card:#121318;
+    --muted:#9aa4b2;
+    --blue:#1A73E8;
+    --glass: rgba(255,255,255,0.03);
+  }
 
-/* header */ 
-header {
-    z-index: 2;
-    height: 100px;
-    display: flex;
-    width: 100%;
-    background: linear-gradient(-90deg,skyblue, white);
-    align-items: center;
-    justify-content: space-between;
-    transition: .3s;
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{
+    font-family:'Poppins',sans-serif;
+    background:var(--bg);
+    color:#eef2f7;
+    scroll-behavior:smooth;
+  }
 
-}
-.brand-header {
-    display: flex;
-    align-items: center;
-    margin-left: 50px;
+  /* ====== HEADER ====== */
+  header{
+    position:sticky;
+    top:0;
+    z-index:999;
+    background:rgba(14,17,23,0.92);
+    backdrop-filter:blur(8px);
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:10px 24px;
+    border-bottom:1px solid rgba(255,255,255,0.08);
+  }
 
-}
-.judul {
-    margin-left: 80px;
-    font-family: jetBrains;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-.judul > h1:nth-child(1) {
-    font-size: 2rem;
-}
-.judul > h2:nth-child(2) {
-    font-size: 1.5rem;
-    color: skyblue;
-}
+  .logo{display:flex;align-items:center;gap:10px}
+  .logo .badge{
+    width:40px;height:40px;border-radius:10px;
+    background:var(--glass);display:flex;align-items:center;justify-content:center;
+    color:var(--blue);font-weight:700;
+  }
 
-.penjelasan-header {
-    text-decoration: none;
-    color: black;
-    display: flex;
-    align-items: center;
-    position: relative; 
-}
-.link-nav {
-    text-decoration: none;
-    padding: 40px 30px;
-    font-size: 1rem;
-    font-family: jetBrains;
-    cursor: pointer;
-    transition: .3s;
-}
-.link-nav:hover {
-    background-color: rgb(255, 255, 255);
-}
-/* main */
+  nav{display:flex;align-items:center;gap:16px}
+  nav a{
+    color:var(--muted);text-decoration:none;font-weight:500;
+    transition:.2s;
+  }
+  nav a:hover{color:#fff}
+  .cta{
+    background:var(--blue);
+    padding:10px 16px;
+    border-radius:10px;
+    color:white;
+    text-decoration:none;
+    font-weight:600;
+    transition:.25s;
+  }
+  .cta:hover{opacity:0.85}
 
-.container-main {
-    height: auto;
-    position: relative;
-}
-.ketentuan_peserta {
-     display: flex;
-     justify-content: center;
-     flex-direction: column;
-     padding: 50px;
+  /* ====== HERO ====== */
+  .container{max-width:1100px;margin:0 auto;padding:90px 24px 36px;}
+  .hero{
+    display:flex;align-items:center;justify-content:space-between;
+    gap:30px;flex-wrap:wrap;
+  }
+  .hero-left{flex:1;min-width:300px}
+  h1{font-size:40px;line-height:1.1;margin-bottom:10px}
+  .accent{color:var(--blue)}
+  p.lead{color:var(--muted);font-size:17px;margin-bottom:16px}
+  .buttons{display:flex;gap:12px;margin-top:20px;flex-wrap:wrap}
+  .btn{
+    padding:10px 16px;border-radius:12px;border:1px solid rgba(255,255,255,0.1);
+    text-decoration:none;color:white;font-weight:600;
+    transition:.25s;
+  }
+  .btn.primary{background:var(--blue);border:none}
+  .btn:hover{opacity:.8}
+  .hero-right{flex:1;min-width:260px;text-align:center}
+  .hero-right img{width:100%;max-width:420px;border-radius:14px;box-shadow:0 8px 24px rgba(0,0,0,0.5)}
 
-}
-.time_line {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  /* ====== CONTENT ====== */
+  section{margin:40px 0}
+  .section-title{font-size:24px;margin-bottom:14px}
+  .card{
+    background:var(--card);
+    border-radius:12px;
+    padding:20px;
+    border:1px solid rgba(255,255,255,0.05);
+    margin-bottom:20px;
+  }
+  .muted{color:var(--muted)}
 
-}
+  table{width:100%;border-collapse:collapse;color:var(--muted)}
+  td,th{padding:10px;border-bottom:1px solid rgba(255,255,255,0.05)}
 
-@media screen and (max-width : 600px)  {
-    header {
-        height: auto;
-        display: flex;
-        flex-direction: column;
-    }
+  .timeline{
+    display:flex;flex-wrap:wrap;gap:12px;
+  }
+  .timeline-item{
+    flex:1 1 200px;
+    background:var(--glass);
+    border-radius:10px;
+    padding:12px;
+    border:1px solid rgba(255,255,255,0.05);
+  }
 
-    .brand-header {
-        margin: 0;
-        height: 100px;
-        width: 100%;
-        display: flex;
-        justify-content: space-between;
-    }
-    .judul {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-    .judul > img {
-        margin-left: 10px;
-    }
-    .penjelasan-header{
-        z-index: 3;
-        flex-direction: column;
-        width: 100%;
-        display: none;
+  .criteria{
+    display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:12px;
+  }
+  .criterion{
+    background:var(--glass);
+    padding:12px;border-radius:10px;
+    border:1px solid rgba(255,255,255,0.05);
+  }
 
-    }
-    .link-nav {
-        color: black;
-        display: block;
-        transition: .3s;
-        cursor: pointer;
-        padding: 10px;
-    }
-    .link-nav:hover {
-        background-color: gray;
-    }
-    .judul {
-        margin: 0;
-    }
-    #logo_brand {
-        display: none;
-    }
+  /* ====== SHOWCASE ====== */
+  .showcase{
+    display:flex;gap:12px;overflow-x:auto;padding-bottom:10px;
+  }
+  .project-thumb{
+    min-width:160px;height:100px;border-radius:8px;
+    background:linear-gradient(90deg,#0b1218,#0f1319);
+    display:flex;align-items:center;justify-content:center;
+    border:1px solid rgba(255,255,255,0.05);
+  }
 
-    .container-main {
-        height: 10000px;
-    }
-    .ketentuan_peserta {
-        max-width: 600px;
-        display: flex;
-        padding: 50px ;
-        align-items: center;
-        flex-direction: column;
+  /* ====== FOOTER ====== */
+  footer{
+    background:#0c0f14;
+    border-top:1px solid rgba(255,255,255,0.05);
+    padding:20px 24px;
+    text-align:center;
+    color:var(--muted);
+  }
 
-    }
-    .ketentuan_peserta > h2 {
-        background-color: skyblue;
-        padding: 10px;
-        border-radius: 10px;
-        box-shadow: 2px 2px 2px black;
-    }
-    .time_line {
-        border:  2px solid;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-
-    }
-    .menu {
-        background-color: aliceblue;
-        border-radius: 5px;
-        margin-right: 10px;
-        color: black;
-        cursor: pointer;
-        border: none;
-        transition: .3s;
-        padding: 10px 20px 10px 20px;
-
-    }
-    .menu:hover {
-        background-color: gray;
-    }
-    .menu:active {
-        transform: translateY(10px);
-    }
-    .menu {
-        width: 55px;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-    .menu > div {
-        height: 5px;
-        width: 30px;
-        background-color: black;
-        margin: 3px;
-        border-radius: 10px;
-    }
-    .prosedure_pendaftaran {
-        display: flex;
-        flex-direction: column;
-        padding: 50px;
-    }
-    .mekanisme_lomba {
-        display: flex;
-        flex-direction: column;
-        padding: 50px;
-    }
-    .sistem_penilaian {
-        display: flex;
-        flex-direction: column;
-        padding: 50px;
-    }
-    .ketentuan_presentasi_project {
-        display: flex;
-        flex-direction: column;
-        padding: 50px;
-    }
-
-}
-@media screen and (min-width : 600px) {
-    .menu {
-        display: none;
-    }
-    .prosedure_pendaftaran {
-        display: flex;
-        flex-direction: column;
-        padding: 50px;
-    }
-    .mekanisme_lomba {
-        display: flex;
-        flex-direction: column;
-        padding: 50px;
-    }
-    .sistem_penilaian {
-        display: flex;
-        flex-direction: column;
-        padding: 50px;
-    }
-    .ketentuan_presentasi_project {
-        display: flex;
-        flex-direction: column;
-        padding: 50px;
-    }
-    
-    
-}
+  /* ====== RESPONSIVE ====== */
+  @media(max-width:768px){
+    h1{font-size:32px}
+    nav{display:none}
+    header{flex-wrap:wrap;justify-content:center;text-align:center;gap:10px}
+  }
+  @media(max-width:480px){
+    .hero{flex-direction:column}
+    .hero-right img{max-width:100%}
+    .container{padding:80px 16px}
+    .btn{flex:1;text-align:center}
+  }
