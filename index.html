@@ -30,12 +30,15 @@
     
 
   <nav id="navigation">
-    <a href="#beranda">Beranda</a>
-    <a href="#tentang">Tentang</a>
-    <a href="#ketentuan">Ketentuan</a>
-    <a href="#timeline">Timeline</a>
-    <a href="#penilaian">Penilaian</a>
-    <a class="cta" href="#daftar">Daftar Sekarang</a>
+    <div class="link">
+      <a class="nav_link" href="#beranda">Beranda</a>
+      <a class="nav_link" href="#tentang">Tentang</a>
+      <a class="nav_link" href="#ketentuan">Ketentuan</a>
+      <a class="nav_link" href="#timeline">Timeline</a>
+      <a class="nav_link" href="#penilaian">Penilaian</a>
+      <a class="cta nav_link" href="#daftar">Daftar Sekarang</a>
+    </div>
+    
   </nav>
 
   
@@ -52,7 +55,7 @@
         <a class="btn primary" href="#daftar">Daftar Sekarang (Rp25.000)</a>
         <a class="btn" href="#ketentuan">Baca Ketentuan</a>
       </div>
-      <div style="margin-top:12px;color:var(--muted)">Biaya pendaftaran: <strong>Rp25.000</strong> • Konfirmasi via WA: <strong>089514433486</strong></div>
+      <div style="margin-top:12px;color:var(--muted)">Biaya pendaftaran: <strong>Rp25.000</strong> • <a style="text-decoration: none;" href="https://wa.me/6289514433486">Konfirmasi via WA: <strong>089514433486</strong></a></div>
     </div>
     <div class="hero-right">
       <img src="style/img/fleyer.jpg" alt="Ilustrasi siswa Scratch">
@@ -118,13 +121,13 @@
     <div class="card">
       <p class="muted"><strong>Biaya pendaftaran:</strong> Rp25.000,00</p>
       <p class="muted"><strong>Periode registrasi:</strong> 29 Oktober 2025 — 6 November 2025</p>
-      <p class="muted"><strong>Form pendaftaran:</strong> <em>Isi Google Form resmi panitia (GANTI_DENGAN_LINK)</em></p>
+      <p class="muted"><strong>Form pendaftaran:</strong> <em>Isi Google Form resmi panitia :<a style="text-decoration: none;" href="https://forms.gle/p7zrPBHXwQWCqu5c9">(https://forms.gle/p7zrPBHXwQWCqu5c9)</a></em></p>
       <p class="muted"><strong>Rekening pembayaran:</strong><br>
          Nomor Rekening: <strong>901028357004</strong><br>
          Bank: <strong>Sea Bank</strong><br>
          Atas Nama: <strong>Hermin Nutfatin</strong>
       </p>
-      <p class="muted">Konfirmasi bukti pembayaran melalui WhatsApp: <strong>089514433486</strong>. Setelah diverifikasi, data tidak dapat diubah.</p>
+      <p class="muted">Konfirmasi bukti pembayaran melalui <a style="text-decoration: none;" href="https://wa.me/6289514433486">WhatsApp: <strong>089514433486</strong></a>. Setelah diverifikasi, data tidak dapat diubah.</p>
     </div>
   </section>
 
@@ -190,9 +193,12 @@
 
 <script>
   $(document).ready(function() {
-    $("#navigation").hide()
+    
     $(".menu").click(function(){
       $("#navigation").animate({height: "toggle"});
+    })
+    $(".nav_link").click(function() {
+      $("#navigation").hide();
     })
   })
 </script>
