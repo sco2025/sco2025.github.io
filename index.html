@@ -6,19 +6,30 @@
 <title>SMASA Coding Olympiad 2025 — INNOVATE TO EDUCATE</title>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style/style.css">
+<script src="https://code.jquery.com/jquery-3.7.1.js"></script>
 </head>
 <body>
 
 <header>
+
   <div class="logo">
     <div class="badge"><img src="style/img/smasa.png" alt="" width="50px"></div>
     <div>
       <div style="font-weight:700">SMASA Coding Olympiad</div>
       <div class="muted" style="font-size:13px">SMA Negeri 1 Lumajang • 2025</div>
     </div>
+
+    <div class="menu">
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+
   </div>
 
-  <nav>
+    
+
+  <nav id="navigation">
     <a href="#beranda">Beranda</a>
     <a href="#tentang">Tentang</a>
     <a href="#ketentuan">Ketentuan</a>
@@ -26,6 +37,9 @@
     <a href="#penilaian">Penilaian</a>
     <a class="cta" href="#daftar">Daftar Sekarang</a>
   </nav>
+
+  
+
 </header>
 
 <div class="container">
@@ -173,6 +187,15 @@
 <footer>
   © 2025 SMA Negeri 1 Lumajang — SMASA Coding Olympiad (SCO) • Kontak: 089514433486 • Email panitia@smasa-lumajang.sch.id
 </footer>
+
+<script>
+  $(document).ready(function() {
+    $("#navigation").hide()
+    $(".menu").click(function(){
+      $("#navigation").animate({height: "toggle"});
+    })
+  })
+</script>
 
 </body>
 </html>
